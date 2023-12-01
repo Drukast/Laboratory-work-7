@@ -7,7 +7,7 @@ function shuffle(matrix) {  //Функция перемешивает масси
             numbers.splice(elem, 1);
         }
     }
-    return matrix
+    return matrix;
 }
 
 function draw_field() { //Функция рисует квадраты с числами внутри в соответствии с массивом matrix
@@ -18,10 +18,10 @@ function draw_field() { //Функция рисует квадраты с чис
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
             ctx.fillStyle = 'white';
-            ctx.fillRect(1 + (200 * i), 1 + (200 * j), 198, 198)
+            ctx.fillRect(1 + (200 * i), 1 + (200 * j), 198, 198);
             ctx.fillStyle = 'black';
             if (matrix[i][j] != 16) {
-                ctx.fillText(matrix[i][j], 94 + (200 * i), 101 + (200 * j))
+                ctx.fillText(matrix[i][j], 94 + (200 * i), 101 + (200 * j));
             }
         }
     }
@@ -31,7 +31,7 @@ function Get16() {  //Функция ищет индекс элемента ма
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
             if (matrix[i][j] == 16) {
-                return [i, j]
+                return [i, j];
             }
         }
     }
@@ -47,24 +47,24 @@ function move(x, y) {  //Функция сравнивает значения а
 }
 
 function win_check() {  //Функция сравнивает массив matrix с массивом win_matrix и возвращает true в случае сходства/false в случае различия
-    let win_matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16]]
+    let win_matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16]];
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
             if (matrix[i][j] != win_matrix[i][j]) {
-                return false
+                return false;
             }
         }
     }
-    return true
+    return true;
 }
 
 function Turn(x, y) {   //Функция вызывает функцию move для перемещения квадратов, затем рисует поле заново, и проверяет массив matrix на победу
-    move(x, y)
+    move(x, y);
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    draw_field()
+    draw_field();
     if (win_check()) {
-        alert('YOU WIN!!!')
+        alert('YOU WIN!!!');
     }
 }
 
@@ -77,5 +77,5 @@ field.onclick = function (e) { //Event происходящий в случае 
 const canvas = document.getElementById('field');
 const ctx = canvas.getContext("2d");
 var matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-matrix = shuffle(matrix)
+matrix = shuffle(matrix);
 draw_field();
