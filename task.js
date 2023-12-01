@@ -31,3 +31,22 @@ function draw_field() {
         }
     }
 }
+
+function Get16() {
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
+            if (matrix[i][j] == 16) {
+                return [i, j]
+            }
+        }
+    }
+}
+
+function move(x, y) {
+    let elem16 = Get16();
+    if (((x - 1 == elem16[0] || x + 1 == elem16[0]) && y == elem16[1]) ||
+        ((y - 1 == elem16[1] || y + 1 == elem16[1]) && x == elem16[0])) {
+        matrix[elem16[0]][elem16[1]] = matrix[x][y];
+        matrix[x][y] = 16;
+    }
+}
