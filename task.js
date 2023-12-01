@@ -62,3 +62,21 @@ function win_check() {
     }
     return true
 }
+
+function Turn(x, y) {
+    move(x, y)
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    draw_field()
+    if (win_check()) {
+        alert('YOU WIN!!!')
+    }
+}
+
+field.onclick = function (e) {
+    let x = Math.floor((e.pageX - e.target.offsetLeft) / 200), y = Math.floor((e.pageY - e.target.offsetTop) / 200);
+    Turn(x, y);
+}
+
+matrix = shiffle(matrix)
+draw_field();
