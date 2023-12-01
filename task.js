@@ -15,7 +15,6 @@ function draw_field() { //Функция рисует квадраты с чис
     canvas.width = 800;
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, 800, 800);
-    ctx.fillStyle = 'white';
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
             ctx.fillStyle = 'white';
