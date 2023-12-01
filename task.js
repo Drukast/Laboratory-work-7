@@ -1,7 +1,3 @@
-const canvas = document.getElementById('field');
-const ctx = canvas.getContext("2d");
-var matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-
 function shuffle(matrix) {
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     for (let i = 0; i < 4; i++) {
@@ -78,5 +74,8 @@ field.onclick = function (e) {
     Turn(x, y);
 }
 
+const canvas = document.getElementById('field');
+const ctx = canvas.getContext("2d");
+var matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
 matrix = shuffle(matrix)
 draw_field();
