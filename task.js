@@ -50,3 +50,15 @@ function move(x, y) {
         matrix[x][y] = 16;
     }
 }
+
+function win_check() {
+    let win_matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16]]
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
+            if (matrix[i][j] != win_matrix[i][j]) {
+                return false
+            }
+        }
+    }
+    return true
+}
