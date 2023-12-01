@@ -78,5 +78,5 @@ field.onclick = function (e) {
     Turn(x, y);
 }
 
-matrix = shiffle(matrix)
+matrix = shuffle(matrix)
 draw_field();
