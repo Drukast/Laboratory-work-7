@@ -93,8 +93,18 @@ field.onclick = function (e) { //Event происходящий в случае 
     Turn(x, y);
 }
 
-const canvas = document.getElementById('field');
-const ctx = canvas.getContext("2d");
-var matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-matrix = shuffle(matrix);
-draw_field();
+window.onload = function () {
+    window.canvas = document.getElementById('field');
+    window.ctx = canvas.getContext("2d");
+    canvas.height = 824;
+    canvas.width = 824;
+    window.matrix = Shuffle();
+    window.images = LoadImages();
+    matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 16], [4, 8, 12, 15]]
+    let img = new Image();
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+    };
+    img.src = 'images/start.png';
+    window.phase = 0;
+}
