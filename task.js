@@ -1,4 +1,4 @@
-function LoadImages() {
+function LoadImages() { //Функция загружает изображения из папки images в массив images
     let images = [];
     for (let i = 0; i < 16; i++) {
         let img = new Image();
@@ -50,7 +50,7 @@ function Move(x, y) {  //Функция сравнивает значения а
     }
 }
 
-function win_check() {  //Функция сравнивает массив matrix с массивом win_matrix и возвращает true в случае сходства/false в случае различия
+function WinCheck() {  //Функция сравнивает массив matrix с массивом win_matrix и возвращает true в случае сходства/false в случае различия
     let win_matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16]];
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
@@ -80,7 +80,7 @@ function Turn(x, y) {   //Функция вызывает функцию move д
     }
 }
 
-field.onclick = function (e) { //Event происходящий в случае нажатия на canvas, 
+field.onclick = function (event) { //Event происходящий в случае нажатия на canvas, 
     //который получает положение мыши и рассчитывающий индекс элемента массива matrix на который нажали
     let rect = canvas.getBoundingClientRect();
     let x = Math.floor((event.pageX - rect.left - 12) / 200), y = Math.floor((event.pageY - rect.top - 12) / 200);
