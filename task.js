@@ -8,7 +8,7 @@ function LoadImages() { //Функция загружает изображени
     return images;
 }
 
-function Shuffle(matrix) {  //Функция перемешивает массив matrix в случайном порядке значениями из массива numbers
+function Shuffle() {  //Функция перемешивает массив matrix в случайном порядке значениями из массива numbers
     let matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     for (let i = 0; i < 4; i++) {
