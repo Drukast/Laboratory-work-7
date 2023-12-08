@@ -88,7 +88,8 @@ function Turn(x, y) {   //Функция вызывает функцию move д
 
 field.onclick = function (e) { //Event происходящий в случае нажатия на canvas, 
     //который получает положение мыши и рассчитывающий индекс элемента массива matrix на который нажали
-    let x = Math.floor((e.pageX - e.target.offsetLeft) / 200), y = Math.floor((e.pageY - e.target.offsetTop) / 200);
+    let rect = canvas.getBoundingClientRect();
+    let x = Math.floor((event.pageX - rect.left - 12) / 200), y = Math.floor((event.pageY - rect.top - 12) / 200);
     Turn(x, y);
 }
 
