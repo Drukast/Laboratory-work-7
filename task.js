@@ -20,19 +20,12 @@ function shuffle(matrix) {  //Функция перемешивает масси
     return matrix;
 }
 
-function draw_field() { //Функция рисует квадраты с числами внутри в соответствии с массивом matrix
-    canvas.height = 800;
-    canvas.width = 800;
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, 800, 800);
+function Render() { //Функция рисует квадраты с числами внутри в соответствии с массивом matrix
+    ctx.fillStyle = 'black'
+    ctx.fillRect(0, 0, 824, 824);
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
-            ctx.fillStyle = 'white';
-            ctx.fillRect(1 + (200 * i), 1 + (200 * j), 198, 198);
-            ctx.fillStyle = 'black';
-            if (matrix[i][j] != 16) {
-                ctx.fillText(matrix[i][j], 94 + (200 * i), 101 + (200 * j));
-            }
+            ctx.drawImage(images[matrix[i][j] - 1], 12 + (200 * i), 12 + (200 * j));
         }
     }
 }
@@ -47,7 +40,7 @@ function Get16() {  //Функция ищет индекс элемента ма
     }
 }
 
-function move(x, y) {  //Функция сравнивает значения аргументов с индексом элемента 16,
+function Move(x, y) {  //Функция сравнивает значения аргументов с индексом элемента 16,
     let elem16 = Get16();   //так чтобы элемент массива matrix с индексом x,y был по соседству с элементом 16
     if (((x - 1 == elem16[0] || x + 1 == elem16[0]) && y == elem16[1]) ||
         ((y - 1 == elem16[1] || y + 1 == elem16[1]) && x == elem16[0])) {
