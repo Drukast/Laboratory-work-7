@@ -69,12 +69,20 @@ function win_check() {  //Функция сравнивает массив matri
 }
 
 function Turn(x, y) {   //Функция вызывает функцию move для перемещения квадратов, затем рисует поле заново, и проверяет массив matrix на победу
-    move(x, y);
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    draw_field();
-    if (win_check()) {
-        alert('YOU WIN!!!');
+    if (phase == 1) {
+        Move(x, y);
+    } else {
+        phase = 1;
+    }
+    Render();
+    if (WinCheck()) {
+        let img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = 'images/win.png';
+        window.matrix = Shuffle();
+        phase = 0;
     }
 }
 
