@@ -94,7 +94,6 @@ window.onload = function () { //Событие запускается при п�
     canvas.width = 824;
     window.matrix = Shuffle();
     window.images = LoadImages();
-    matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 16], [4, 8, 12, 15]]
     let img = new Image();
     img.onload = function () {
         ctx.drawImage(img, 0, 0);
