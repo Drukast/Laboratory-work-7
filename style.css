@@ -1,0 +1,12 @@
+.column {
+    float: left;
+}
+
+.side {
+    width: 25%;
+}
+
+.middle {
+    width: 50%;
+    text-align: center;
+}
