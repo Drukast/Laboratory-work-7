@@ -50,7 +50,8 @@ function Move(x, y) {  //Функция сравнивает значения а
     }
 }
 
-function WinCheck() {  //Функция сравнивает массив matrix с массивом win_matrix и возвращает true в случае сходства/false в случае различия
+function WinCheck() {  //Функция сравнивает массив matrix с массивом win_matrix и 
+    //возвращает true в случае сходства/false в случае различия
     let win_matrix = [[1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15], [4, 8, 12, 16]];
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
@@ -62,7 +63,8 @@ function WinCheck() {  //Функция сравнивает массив matrix
     return true;
 }
 
-function Turn(x, y) {   //Функция вызывает функцию move для перемещения квадратов, затем рисует поле заново, и проверяет массив matrix на победу
+function Turn(x, y) {   //Функция вызывает функцию move для перемещения квадратов,
+    // затем рисует поле заново, и проверяет массив matrix на победу
     if (phase == 1) {
         Move(x, y);
     } else {
