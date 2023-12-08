@@ -87,7 +87,7 @@ field.onclick = function (event) { //Event происходящий в случ�
     Turn(x, y);
 }
 
-window.onload = function () {
+window.onload = function () { //Событие запускается при полной загрузке страницы
     window.canvas = document.getElementById('field');
     window.ctx = canvas.getContext("2d");
     canvas.height = 824;
